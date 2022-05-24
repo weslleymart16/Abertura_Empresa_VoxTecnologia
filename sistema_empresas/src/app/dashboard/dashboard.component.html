@@ -1,0 +1,147 @@
+<header class="header-dashboard">
+  <div class="header-voxLogo">
+    <a routerLink="/dashboard"
+      ><img src="../../assets/Logo/Logo_Vox_Letra_Azul.png" alt="logoVox"
+    /></a>
+    <h1>Pedidos de Abertura da empresa</h1>
+  </div>
+
+  <div class="header-button">
+    <button
+      *ngIf="!showEditCompay"
+      routerLink="/register"
+      class="btn btn-primary px-4 py-2"
+    >
+      <i class="bi bi-plus-circle-fill mx-2"></i>Solicitar Abertura
+    </button>
+  </div>
+</header>
+
+<main *ngIf="!showEditCompay" class="main-dashboard container">
+  <article class="row justify-content-center">
+    <section class="col">
+      <section
+        *ngFor="let company of companiesSaved"
+        class="card mb-3 card-company"
+      >
+        <div class="card-body d-flex justify-content-between border border-1">
+          <img src="../../assets/Logo/usuario.png" alt="usuario" />
+
+          <div>
+            <h5 class="card-title">{{ company.solicitante.ds_responsavel }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {{ company.empresa.ds_nome_fantasia }}
+            </h6>
+          </div>
+
+          <div>
+            <button class="btn btn-primary" (click)="viewCompany(company.id)">
+              <i class="bi bi-eye-fill mx-2"></i>Visualizar
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <span class="line"></span>
+
+    <section class="col">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h2 class="fs-5 mb-5">Detalhe do pedido</h2>
+
+          <div class="user-company mb-5">
+            <img src="../../assets/Logo/usuario.png" alt="user" />
+            <h3 class="fs-6">
+              {{
+                companyById?.id
+                  ? companyById.empresa.ds_nome_fantasia
+                  : "Nome da Empresa"
+              }}
+            </h3>
+          </div>
+
+          <p class="mb-0 data-company">
+            Responsável:
+            <span>{{
+              companyById?.id ? companyById.solicitante.ds_responsavel : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            CPF:
+            <span>{{
+              companyById?.id ? companyById.solicitante.nu_cpf : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            Endereço:
+            <span>{{
+              companyById?.id
+                ? companyById.empresa.endereco.ds_logradouro
+                : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            Bairro:
+            <span>{{
+              companyById?.id ? companyById.empresa.endereco.ds_bairro : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            Cidade:
+            <span>{{
+              companyById?.id ? companyById.empresa.endereco.ds_municipio : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            CEP:
+            <span>{{
+              companyById?.id ? companyById.empresa.endereco.co_cep : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            Complemento:
+            <span>{{
+              companyById?.id
+                ? companyById.empresa.endereco.ds_complemento
+                : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            UF:
+            <span>{{
+              companyById?.id ? companyById.empresa.endereco.co_uf : "--"
+            }}</span>
+          </p>
+
+          <p class="mb-0 data-company">
+            Número: <span>{{ "--" }}</span>
+          </p>
+        </div>
+
+        <div>
+          <button
+            class="btn btn-dark"
+            [disabled]="!companyById ? true : false"
+            (click)="showEditCompay = true"
+          >
+            <i class="bi bi-pencil-fill me-2"></i>Editar
+          </button>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<app-editar-cadastro
+  [companyToEdit]="companyById"
+  (finishData)="refreshView()"
+  *ngIf="showEditCompay"
+></app-editar-cadastro>

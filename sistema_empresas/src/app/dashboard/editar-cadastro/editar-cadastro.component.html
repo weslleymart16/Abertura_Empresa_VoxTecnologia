@@ -1,0 +1,106 @@
+<main class="container main-register">
+  <form [formGroup]="formsEditCompany" class="row justify-content-between">
+    <div class="col">
+      <h3 class="mb-3">Dados do solicitante</h3>
+      <div class="mb-3">
+        <label class="form-label data-company">Responsavél pela empresa</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="responsavel"
+          placeholder="Nome do responsável"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">CPF</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="cpf"
+          placeholder="000.000.000-00"
+          mask="000.000.000-00"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Data nascimento</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="dataNascimento"
+          placeholder="DD/MM/AA"
+          mask="00/00/0000"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Nome fantasia</label>
+        <input class="form-control" type="text" formControlName="empresa" />
+      </div>
+      <div class="mb-3">
+        <div class="mb-3">
+          <label class="form-label data-company"
+            >Escolha sua entidade de registro</label
+          >
+          <div class="form-check" *ngFor="let entity of entities">
+            <input
+              class="form-check-input"
+              type="radio"
+              formControlName="entidade"
+              [value]="entity.key"
+            />
+            <label class="form-check-label">{{ entity.value }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="line"></span>
+
+    <div class="col">
+      <h3 class="mb-3">Endereço da empresa</h3>
+      <div class="mb-3">
+        <label class="form-label data-company">CEP</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="cep"
+          placeholder="99999-999"
+          mask="00000-000"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Endereço</label>
+        <input class="form-control" type="text" formControlName="endereco" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Bairro</label>
+        <input class="form-control" type="text" formControlName="bairro" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Complemento</label>
+        <input class="form-control" type="text" formControlName="complemento" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Cidade</label>
+        <input class="form-control" type="text" formControlName="cidade" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label data-company">Estado</label>
+        <select class="form-select data-company" formControlName="estado">
+          <option *ngFor="let state of states" [value]="state.sigla">
+            {{ state.nome }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <div class="btn-send">
+    <button
+      class="btn btn-primary btn-send"
+      (click)="update()"
+      [disabled]="!formsEditCompany.valid"
+    >
+      <i class="bi bi-send-fill me-2"></i>Enviar
+    </button>
+  </div>
+</main>

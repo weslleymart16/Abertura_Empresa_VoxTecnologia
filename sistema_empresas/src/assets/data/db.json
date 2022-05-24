@@ -1,0 +1,60 @@
+{
+  "empresas": [
+    {
+      "solicitante": {
+        "ds_responsavel": "Weslley Gomes Martins Freitas",
+        "nu_cpf": "123.456.789-20",
+        "date_nascimento": "15/02/1997"
+      },
+      "empresa": {
+        "endereco": {
+          "co_cep": "62430-000",
+          "ds_logradouro": "teste",
+          "ds_bairro": "bairro qualquer",
+          "ds_complemento": "qualquer",
+          "ds_municipio": "cidade qualquer ",
+          "co_uf": "CE"
+        },
+        "ds_nome_fantasia": "Weslley Gomes Martins Freitas LTDA"
+      },
+      "id": 1
+    },
+    {
+      "solicitante": {
+        "ds_responsavel": "Bianca Dias Siqueira Lima Martins",
+        "nu_cpf": "987.654.311-22",
+        "date_nascimento": "10/11/2001"
+      },
+      "empresa": {
+        "endereco": {
+          "co_cep": "12345-647",
+          "ds_logradouro": "rua",
+          "ds_bairro": "bairro",
+          "ds_complemento": "complemento",
+          "ds_municipio": "cidade",
+          "co_uf": "MG"
+        },
+        "ds_nome_fantasia": "Bianca Dias Siqueira Lima LTDA"
+      },
+      "id": 2
+    }
+  ],
+  "entidade-registro": [
+    {
+      "key": 104305,
+      "value": "Cartório"
+    },
+    {
+      "key": 104306,
+      "value": "Junta Comercial"
+    },
+    {
+      "key": 104308,
+      "value": "OAB"
+    },
+    {
+      "key": 104309,
+      "value": "RFB"
+    }
+  ]
+}
