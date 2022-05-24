@@ -53,6 +53,7 @@
  - Poderia fazer uma reponsividade para mobile, pensei em fazer esse diferencial, mas poderia atrasar na entrega do projeto.
  - Nas requisições poderia ter feito com o interceptor.
  - Poderia colocar a opção de excluir cadastro.
+ - Melhor a foto do usuário.
  
  ---
 
