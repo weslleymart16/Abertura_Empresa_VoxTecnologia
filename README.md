@@ -34,7 +34,7 @@
  ---
  <div align="center">
   
-  Então será redirecionado para página inicial, no card da empresa cadastra irá ter um botão visualizar para ter acesso a algumas informações importantes sobre o         registro da empresa. Caso queira mudar algum dos dados informados, haverá uma opção "Editar".
+  Então será redirecionado para página inicial, no card da empresa cadastrada irá ter um botão visualizar para ter acesso a algumas informações importantes sobre o         registro da empresa. Caso queira mudar algum dos dados informados, haverá uma opção "Editar".
   
  ![img 1](https://github.com/weslleymart16/Abertura_Empresa_VoxTecnologia/blob/main/sistema_empresas/projeto/img3.png)
   
