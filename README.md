@@ -14,7 +14,7 @@
 
  <div align="center">
   
-  <p>Sistema banco tem a função de fazer um novo cadastro clicando no botão "Solicitar abertura".</p> 
+  <p>O sistema tem a função de fazer um novo cadastro clicando no botão "Solicitar abertura".</p> 
   
   ![img 1](https://github.com/weslleymart16/Abertura_Empresa_VoxTecnologia/blob/main/sistema_empresas/projeto/img1.png)
   
